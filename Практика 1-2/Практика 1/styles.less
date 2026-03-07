@@ -1,0 +1,52 @@
+@primary-color: #c00080;
+@spacing: 16px;
+@border-radius: 8px;   
+
+.button(@bg) {
+    padding: 10px 20px;
+    background: @bg;
+    color: white;
+    border-radius: @border-radius;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background: darken(@bg, 10%);
+    }
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    padding: @spacing;
+    border-radius: @border-radius;
+    max-width: 300px;
+    font-family: Arial, sans-serif;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+        border-radius: @border-radius;
+    }
+
+    &__title {
+        font-size: 1.5em;
+        margin: @spacing/2 0;
+        color: #333;
+    }
+
+    &__description {
+        color: #555;
+        margin-bottom: @spacing;
+        line-height: 1.4;
+    }
+
+    &__button {
+        .button(@primary-color);
+    }
+}
